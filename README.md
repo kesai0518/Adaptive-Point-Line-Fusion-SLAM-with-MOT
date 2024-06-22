@@ -7,4 +7,6 @@ The code depends on Eigen3, OpenCV, Solov2, ROS2
 For running the program:  
 1- Enter the root directory and open a terminal  
 2- Colcon build  
-3- open another terminal, execute: r  
+3- source your directory/install/setup.bash  
+4- ros2 run semantic solo_service
+5- ros2 run PointLineSLAM rgbd_line ...(the same as ORB-SLAM3)  
