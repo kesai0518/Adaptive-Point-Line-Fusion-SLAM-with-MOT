@@ -1,0 +1,7 @@
+string picname
+---
+int8 nums
+string[] labels
+float32[] scores
+uint8[] masks
+int64[] boxes
