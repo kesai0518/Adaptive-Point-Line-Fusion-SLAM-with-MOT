@@ -1,0 +1,104 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Camera.type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 535.4
+Camera.fy: 539.2
+Camera.cx: 320.1
+Camera.cy: 247.6
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+Camera.width: 640
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# IR projector baseline times fx (aprox.)
+Camera.bf: 40.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40.0
+
+# Deptmap values factor
+DepthMapFactor: 5000.0
+
+Camera.width: 640
+Camera.height: 480
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+
+#--------------------------------------------------------------------------------------------
+# SLAM Parameter
+# 0->Full Point Line SLAM (default)
+# 1->Only Line Pose Estimation and Local Mapping using the Euclidean distance as an error function (Loop Closing thread is deactivated)
+# 2->Only Line Pose Estimation and Local Mapping using the angular distance as an error function (Loop Closing thread is deactivated)
+# 3->Only Line Pose Estimation and Local Mapping using both the Euclidean and angular distance as an error function (Loop Closing thread is deactivated)
+#--------------------------------------------------------------------------------------------
+SLAM             : 0
+
+#--------------------------------------------------------------------------------------------
+# Line Extractor
+# 0->LSD Extractor (default)
+# 1->ED Extractor (Suggested not to be used as long as only Line SLAM is chosen i.e. SLAM->1 or SLAM->2 or SLAM->3)
+#--------------------------------------------------------------------------------------------
+extractor        : 0
+
+#--------------------------------------------------------------------------------------------
+# Line Extractor Parameters
+# You can decrease the lsd_scale parameter in order to decrease computational time e.g. lsd_scale->0.6 or lsd_scale->0.5
+# Also in order to decrease computational time you can set levels to 1
+#--------------------------------------------------------------------------------------------
+nfeatures        : 0    # Number of Line Features (set to 0 if keeping all lines) -> Used for LSD and ED
+lsd_refine       : 0     # -> Used Only for LSD
+lsd_scale        : 0.8  # The scale of the image that will be used to find the lines. Range (0..1.0] -> Used Only for LSD
+levels           : 2     # Levels of the Pyramid (Only 1 and 2 can be selected) -> Used for LSD and ED
+scale            : 2.0   # Scale factor between levels in the scale pyramid -> Used for LSD and ED
+
+
+
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize:2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+
