@@ -1,5 +1,5 @@
 # Adaptive-Point-Line-Fusison-SLAM-with-MOT
-This is a point-line feature fusion SLAM system with moving object tracking, you can download P_L_SLAM1.0 Release version for detailed code on the right side.
+This is a point-line feature fusion SLAM system with moving object tracking. It's a system running in ROS2 environment. 'PointLimeSLAM' include the source code of SLAM system, 'semantic' is a document that includes the semantic topic, 'slam_interfaces' contains communication files between the SLAM system and semantic nodes.
 # Compiling
 The program was only tested under a 64-bit Linux distribution.(Ubuntu 22.04)
 The code depends on Eigen3, OpenCV, Solov2, ROS2
